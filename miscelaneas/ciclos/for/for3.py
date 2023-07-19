@@ -1,5 +1,6 @@
 #Enseñar los numeros pares en un rango X
-
-for numero in range(1, 100):
-    if numero % 2 == 0:
-        print(numero)
+def numeros_pares_x():
+    for numero in range(1, 10):
+        if numero % 2 == 0:
+            print(numero)
+print(numeros_pares_x())
