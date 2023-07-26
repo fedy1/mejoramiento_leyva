@@ -1,11 +1,17 @@
-#El programa debera determinar si el usuario tiene una familia grande o pequeña.
-def familia_grande():
-    edad = int(input("Ingrese su edad: "))
-
-    hermanos = int(input("Ingrese el número de hermanos que tiene: "))
-
-    if hermanos > 3:
-        print("Tienes una familia grande.")
+def encontrar_medio(num1, num2, num3):
+    if num1 <= num2 <= num3 or num3 <= num2 <= num1:
+        return num2
+    elif num2 <= num1 <= num3 or num3 <= num1 <= num2:
+        return num1
     else:
-        print("Tienes una familia pequeña.")
-print(familia_grande())
+        return num3
+
+def main():
+    num1 = float(input("Ingresa el primer número: "))
+    num2 = float(input("Ingresa el segundo número: "))
+    num3 = float(input("Ingresa el tercer número: "))
+
+    medio = encontrar_medio(num1, num2, num3)
+    print("El valor del medio es: ", medio)
+
+print(main())

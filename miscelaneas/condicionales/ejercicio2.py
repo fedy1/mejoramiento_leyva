@@ -1,9 +1,17 @@
-#Usar un condicional para verificar si es menor o mayor de edad.
-def menor_o_mayor():
-    edad = int(input("Ingrese su edad: "))
+def contar_cifras(numero):
+    return len(str(numero))
 
-    if edad < 18:
-        print("Eres menor de edad.")
+def main():
+    numero = input("Ingresa un número entre 0 y 9999: ")
+
+    if numero.isdigit():
+        numero = int(numero)
+        if 0 <= numero <= 9999:
+            cifras = contar_cifras(numero)
+            print("El número ",numero, "tiene ",cifras, "cifras.")
+        else:
+            print("Error: El número debe estar entre 0 y 9999.")
     else:
-        print("Eres mayor de edad.")
-print(menor_o_mayor())
+        print("Error: Ingresa un número válido.")
+
+print(main())
