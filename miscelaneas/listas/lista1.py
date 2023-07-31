@@ -1,14 +1,19 @@
-#Lista de nombres mas largos y cortos
-def nombres_largos():
-    nombres_str = input("Ingrese una lista de nombres separados por espacios: ")
+def main():
 
-    nombres_lista = nombres_str.split()
+    cantidad_numeros = int(input("Ingresa la cantidad de números para la serie de Fibonacci: "))
 
-    nombres_mas_largos = [nombre for nombre in nombres_lista if len(nombre) >5]
+    if cantidad_numeros < 1:
+        print("Error: La cantidad de números debe ser al menos 1.")
+        return
 
-    nombres_mas_cortos = [nombre for nombre in nombres_lista if len(nombre) <=5]
+    fibonacci = [0, 1]
 
-    print("Los nombres más largos son:", nombres_mas_largos)
+    while len(fibonacci) < cantidad_numeros:
+        next_fibo = fibonacci[-1] + fibonacci[-2]
+        fibonacci.append(next_fibo)
 
-    print("Los nombres más cortos son:", nombres_mas_cortos)
-print(nombres_largos())
+    print(f"Los {cantidad_numeros} primeros números de la serie de Fibonacci:")
+    for num in fibonacci:
+        print(num)
+
+print(main())
